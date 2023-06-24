@@ -1,6 +1,7 @@
 # Home Sensors
 
-Code for various microcontrollers that send sensor data via MQTT back to a home server running the [store-mqtt-data(https://github.com/henryleach/store-mqtt-data) Python script.
+Code for various microcontrollers that send sensor data via MQTT back to a home server running the 
+[store-mqtt-data](https://github.com/henryleach/store-mqtt-data) Python script.
 
 All sensors require a 'passwords.h' file, which contains the passwords and IDs of the WiFi network it needs to connect to, and the MQTT server.
 
@@ -12,7 +13,19 @@ Beware, that to prevent accidentally syncing your passwords to a public repo, 'p
 
 ## d1-mini-htu21-temp-hum-mqtt
 
-Runs an WEMOS D1 Mini, with an ESP8266 Microcontroller and a HTU21 temperature and humidity sensor.
+Runs an WEMOS D1 Mini, with an ESP8266 Microcontroller and a HTU21 temperature and humidity sensor on a breakout board.
+
+When connecting the HTU21 to be board, don't solder it straight on, separate the two with at least 10cm of wire, otherwise the board interferes with the sensor, and you get inaccurate readings.
+
+### Wiring
+
+| D1 Mini      | HTU21 |
+|--------------|-------|
+| 5V or 3.3V   | VIN   |
+| GND (pin 15) | GND   |
+| D3 (pin 0)   | SCL   |
+| D2 (pin 4)   | SDA   |
+
 
 ## esp8266-node-mcu-reed-switch-gas-meter
 
